@@ -1,5 +1,6 @@
 module GeoYahooHelper
- def geo_autocomplete(id,url,updates)
+ def geo_autocomplete(id,updates)
+    js ="jQuery.noConflict();\n"
     js ="$('##{id}').autocomplete('/#{url}');\n"
     js += "$('##{id}').result(function(event, data, formatted) {\n"
     js += "aux=jQuery(data);\n"

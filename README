@@ -8,15 +8,19 @@ Installation
 =======
 Go to your application dir and type
 
-script/plugin install git://github.com/wadomo/.git
+script/plugin install http://github.com/wadomo/GeoYahoo.git
 
-Add 
+Add this line before the last "end" of your config/environment.rb file:
 
 ENV['YAHOO_API'] = "yourapikeyhere" (get it here http://developer.yahoo.com/geo/geoplanet/)
 
 That's it! Now you can add an autocomplete city field in your views!
 
+IMPORTANT!
 
+You must include in your layout ( if you don't have yet):
+
+<%= javascript_include_tag :defaults %>
 
 Example
 =======
@@ -30,7 +34,11 @@ Add this to your view.
         <%= geo_autocomplete "city_autocomplete",[:city,:country,:state] %>
 </p>
 
+
+
 It will update the hidden fields with the results of yahoo api request.
 You can customize the way that the results are shown adding a geo_yahoo/cities.html.erb file in your app/views folder.
 
+
+=============================================================================
 Copyright (c) 2010 WaDoMo, released under the MIT license
