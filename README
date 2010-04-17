@@ -1,0 +1,37 @@
+GeoYahoo
+========
+
+GeoYahoo is a simple Rails plugin that integrates Yahoo Geo api (http://developer.yahoo.com/geo/geoplanet/) with your Rails Application, using jQuery autocomplete.
+You can easily add an autocomplete Hometown field to your models, forgiving annoying Country and City tables in your app.
+
+Installation
+=======
+Go to your application dir and type
+
+script/plugin install git://github.com/wadomo/.git
+
+Add 
+
+ENV['YAHOO_API'] = "yourapikeyhere" (get it here http://developer.yahoo.com/geo/geoplanet/)
+
+That's it! Now you can add an autocomplete city field in your views!
+
+
+
+Example
+=======
+
+Add this to your view.
+<p>
+        <%= text_field_tag :city_autocomplete,"" %>
+        <%= hidden_field_tag :country  %>
+        <%= hidden_field_tag :state %>
+        <%= hidden_field_tag :city %>
+        <%= geo_autocomplete "city_autocomplete",[:city,:country,:state] %>
+        <div style='margin-left: 30em;'>
+                <%= error_message_on @user,"city" %>
+        </div>
+	</p>
+
+It will update the hidden fields with 
+Copyright (c) 2010 WaDoMo, released under the MIT license
