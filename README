@@ -28,10 +28,9 @@ Add this to your view.
         <%= hidden_field_tag :state %>
         <%= hidden_field_tag :city %>
         <%= geo_autocomplete "city_autocomplete",[:city,:country,:state] %>
-        <div style='margin-left: 30em;'>
-                <%= error_message_on @user,"city" %>
-        </div>
-	</p>
+</p>
 
-It will update the hidden fields with 
+It will update the hidden fields with the results of yahoo api request.
+You can customize the way that the results are shown adding a geo_yahoo/cities.html.erb file in your app/views folder.
+
 Copyright (c) 2010 WaDoMo, released under the MIT license

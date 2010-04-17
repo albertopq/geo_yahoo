@@ -1,0 +1,6 @@
+
+<% if @data && @data['places']['place']%>
+	<% @data['places']['place'].each do |p| %>
+		<%=p['name']%> (<%= p['country']%>, <%= p['admin1'] %>) |<%=p['name']%>|<%=p['country'] %>|<%=p['admin1'] %>
+	<% end %>	
+<% end %>
