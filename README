@@ -14,13 +14,13 @@ Add this line before the last "end" of your config/environment.rb file:
 
 ENV['YAHOO_API'] = "yourapikeyhere" (get it here http://developer.yahoo.com/geo/geoplanet/)
 
-That's it! Now you can add an autocomplete city field in your views!
-
 IMPORTANT!
 
 You must include in your layout ( if you don't have yet):
 
 <%= javascript_include_tag :defaults %>
+
+That's it! Now you can add an autocomplete city field in your views!
 
 Example
 =======
